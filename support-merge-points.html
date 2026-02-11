@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merge Sketch Points - Support &amp; FAQ</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: #333; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 2rem 1rem; }
+        h1 { font-size: 1.8rem; margin-bottom: 0.25rem; }
+        h2 { font-size: 1.3rem; margin-top: 2rem; margin-bottom: 0.5rem; border-bottom: 1px solid #ddd; padding-bottom: 0.3rem; }
+        h3 { font-size: 1.05rem; margin-top: 1.2rem; margin-bottom: 0.3rem; }
+        p, li { margin-bottom: 0.5rem; }
+        ul, ol { padding-left: 1.5rem; }
+        a { color: #0066cc; }
+        .contact { background: #eef6ff; border: 1px solid #cce0ff; border-radius: 6px; padding: 1rem 1.2rem; margin: 1rem 0; }
+        footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #ddd; font-size: 0.85rem; color: #888; }
+    </style>
+</head>
+<body>
+    <h1>Merge Sketch Points</h1>
+    <p>Support and frequently asked questions.</p>
+
+    <h2>Getting Started</h2>
+    <ol>
+        <li>Install the add-in from the Autodesk App Store</li>
+        <li>Restart Fusion if it was open during installation</li>
+        <li>Open a design and edit the sketch you want to clean up</li>
+        <li>Go to the <strong>SKETCH</strong> tab &rarr; <strong>Sketch Utils</strong> panel &rarr; click <strong>Merge Sketch Points</strong></li>
+        <li>Set your tolerance (default 0.01 mm) and review the preview</li>
+        <li>Click <strong>OK</strong> to merge</li>
+    </ol>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <h3>What tolerance should I use?</h3>
+    <p>The default of <strong>0.01 mm</strong> works well for most imported SVG and DXF files. If you're not finding enough points to merge, try increasing it. If too many unrelated points are being grouped together, decrease it. The live preview shows you exactly what will happen before you commit.</p>
+
+    <h3>What's the difference between "endpoints only" and all points?</h3>
+    <p><strong>Merge only curve endpoints</strong> (default, recommended): Only considers the start and end points of sketch curves (lines, arcs, splines). This is the safest option and handles the most common case — gaps between curves that should be connected.</p>
+    <p><strong>All points</strong>: Considers every sketch point, including construction points and midpoints. Use this if you have standalone points that need merging, but be aware it may merge points you didn't intend.</p>
+
+    <h3>My sketch became over-constrained after merging</h3>
+    <p>This can happen if the merged points were already constrained in conflicting ways. Try undoing (<strong>Ctrl+Z</strong> / <strong>Cmd+Z</strong>) and merging with a smaller tolerance, or manually resolve the conflicting constraints.</p>
+
+    <h3>The add-in says "No active sketch"</h3>
+    <p>You must be actively editing a sketch for the add-in to work. Double-click a sketch in the timeline or browser to enter sketch edit mode, then run the command.</p>
+
+    <h3>Can I undo the merge?</h3>
+    <p>Yes. The merge operation is a single undo step in Fusion. Press <strong>Ctrl+Z</strong> (Windows) or <strong>Cmd+Z</strong> (macOS) to undo.</p>
+
+    <h3>It merged points I didn't want merged</h3>
+    <p>Undo the operation and try again with a smaller tolerance. The live preview shows exactly how many groups and points will be affected — review it before clicking OK.</p>
+
+    <h3>Where is the add-in button?</h3>
+    <p>The button is in the <strong>SKETCH</strong> tab, under the <strong>Sketch Utils</strong> panel. You must be editing a sketch for the Sketch tab to be visible. If you don't see it, check that the add-in is enabled under <strong>Tools &rarr; Add-Ins</strong>.</p>
+
+    <h3>Does it work on macOS?</h3>
+    <p>Yes. The add-in supports both Windows 10/11 and macOS 12 (Monterey) or later.</p>
+
+    <h2>Known Limitations</h2>
+    <ul>
+        <li>Very large sketches with thousands of points may take a moment to analyze (the algorithm checks every pair of points)</li>
+        <li>Points that are exactly coincident already (distance = 0) are skipped since they don't need merging</li>
+        <li>The add-in adds coincident constraints — it does not delete or move points</li>
+    </ul>
+
+    <h2>Contact Support</h2>
+    <div class="contact">
+        <p><strong>Email:</strong> <a href="mailto:support@example.com">support@example.com</a></p>
+        <p>When reporting an issue, please include:</p>
+        <ul>
+            <li>Your operating system (Windows or macOS) and Fusion version</li>
+            <li>The tolerance and mode you were using</li>
+            <li>A description of what you expected vs. what happened</li>
+            <li>Any error messages shown</li>
+        </ul>
+        <p>We aim to respond within 2 business days.</p>
+    </div>
+
+    <footer>
+        <p><a href="index.html">&larr; Back to NCL Support</a></p>
+        <p>&copy; 2026 NCL. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Precise SVG Import - Support &amp; FAQ</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: #333; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 2rem 1rem; }
+        h1 { font-size: 1.8rem; margin-bottom: 0.25rem; }
+        h2 { font-size: 1.3rem; margin-top: 2rem; margin-bottom: 0.5rem; border-bottom: 1px solid #ddd; padding-bottom: 0.3rem; }
+        h3 { font-size: 1.05rem; margin-top: 1.2rem; margin-bottom: 0.3rem; }
+        p, li { margin-bottom: 0.5rem; }
+        ul, ol { padding-left: 1.5rem; }
+        a { color: #0066cc; }
+        code { background: #f0f0f0; padding: 0.15rem 0.4rem; border-radius: 3px; font-size: 0.9em; }
+        .contact { background: #eef6ff; border: 1px solid #cce0ff; border-radius: 6px; padding: 1rem 1.2rem; margin: 1rem 0; }
+        footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #ddd; font-size: 0.85rem; color: #888; }
+    </style>
+</head>
+<body>
+    <h1>Precise SVG Import</h1>
+    <p>Support and frequently asked questions.</p>
+
+    <h2>Getting Started</h2>
+    <ol>
+        <li>Install the add-in from the Autodesk App Store</li>
+        <li>Restart Fusion if it was open during installation</li>
+        <li>Open or create a design, then edit a sketch (or the add-in will create one)</li>
+        <li>Go to the <strong>SOLID</strong> tab &rarr; <strong>INSERT</strong> panel &rarr; click <strong>Precise SVG Import</strong></li>
+        <li>Select your SVG file and review the auto-detected settings</li>
+        <li>Click <strong>Import</strong></li>
+    </ol>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <h3>My SVG still imports at the wrong size</h3>
+    <p>The add-in auto-detects the source application from SVG metadata. If your file was created by an unrecognized application, the add-in defaults to 96 DPI. Try switching to <strong>Manual</strong> DPI mode and entering the correct DPI for your source application:</p>
+    <ul>
+        <li>Inkscape: 96 DPI</li>
+        <li>Adobe Illustrator: 72 DPI</li>
+        <li>Affinity Designer: 96 DPI</li>
+        <li>Figma: 96 DPI</li>
+        <li>CorelDRAW: 96 DPI</li>
+    </ul>
+
+    <h3>Some paths are missing after import</h3>
+    <p>The add-in will warn you about unsupported elements. Common causes:</p>
+    <ul>
+        <li><strong>Text elements</strong> must be converted to paths/outlines in your vector editor before exporting to SVG</li>
+        <li><strong>Clip paths and masks</strong> are not supported — flatten or remove them before export</li>
+        <li><strong>CSS-styled paths</strong> with <code>display: none</code> are intentionally skipped</li>
+    </ul>
+
+    <h3>The geometry is offset from where I expected</h3>
+    <p>Check the <strong>Origin Mode</strong> setting in the import dialog. "Preserve" keeps the SVG's original coordinate origin. "Center" places geometry centered on the sketch origin. Try different modes to find what works for your workflow.</p>
+
+    <h3>I get an error about a malformed SVG</h3>
+    <p>Some SVG editors produce files with non-standard formatting. Try:</p>
+    <ol>
+        <li>Open the SVG in Inkscape and re-save as "Plain SVG"</li>
+        <li>Open in a text editor and check for obvious XML errors</li>
+        <li>If the problem persists, send us the SVG file and we'll investigate</li>
+    </ol>
+
+    <h3>Where is the add-in button?</h3>
+    <p>The button is in the <strong>SOLID</strong> tab, under the <strong>INSERT</strong> panel. If you don't see it, check that the add-in is enabled under <strong>Tools &rarr; Add-Ins</strong> (look for "Precise SVG Import" or "NCL_PreciseSVGImport").</p>
+
+    <h3>Does it work on macOS?</h3>
+    <p>Yes. The add-in supports both Windows 10/11 and macOS 12 (Monterey) or later.</p>
+
+    <h2>Known Limitations</h2>
+    <ul>
+        <li>SVG text elements must be converted to paths before import</li>
+        <li>Embedded raster images in SVGs are not imported</li>
+        <li>SVG filters (blur, drop shadow, etc.) are not supported</li>
+        <li>Very large SVGs with thousands of paths may take longer to process</li>
+    </ul>
+
+    <h2>Contact Support</h2>
+    <div class="contact">
+        <p><strong>Email:</strong> <a href="mailto:support@example.com">support@example.com</a></p>
+        <p>When reporting an issue, please include:</p>
+        <ul>
+            <li>Your operating system (Windows or macOS) and Fusion version</li>
+            <li>The SVG file that caused the issue (if possible)</li>
+            <li>A description of what you expected vs. what happened</li>
+            <li>Any error messages shown</li>
+        </ul>
+        <p>We aim to respond within 2 business days.</p>
+    </div>
+
+    <footer>
+        <p><a href="index.html">&larr; Back to NCL Support</a></p>
+        <p>&copy; 2026 NCL. All rights reserved.</p>
+    </footer>
+</body>
+</html>
